@@ -21,13 +21,16 @@ def getanswer():
     r_equivalent_HV = round(r_equivalent_HV,2)
     z_shortcircuit_HV = SC_Test_Results[0]/SC_Test_Results[1]
     x_eq_HV_square = z_shortcircuit_HV**2 - r_equivalent_HV**2
-    x_equivalent_HV = math.sqrt(x_eq_HV_square)
-    x_equivalent_HV = round(x_equivalent_HV,2)
-
-    print(f'Resistance representing core loss reffered to LV is {r_coreloss_LV}Ω.')
-    print(f'Magnetizing reactance reffered to LV is {x_magnetizing_LV}Ω.')
-    print(f'Equivalent resistance reffered to HV is {r_equivalent_HV}Ω.')
-    print(f'Equivalent reactance reffered to HV is {x_equivalent_HV}Ω.')
+    try:
+        x_equivalent_HV = math.sqrt(x_eq_HV_square)
+    except ValueError:
+        print("Value Error!")
+    else:
+        x_equivalent_HV = round(x_equivalent_HV,2)
+        print(f'Resistance representing core loss reffered to LV is {r_coreloss_LV}Ω.')
+        print(f'Magnetizing reactance reffered to LV is {x_magnetizing_LV}Ω.')
+        print(f'Equivalent resistance reffered to HV is {r_equivalent_HV}Ω.')
+        print(f'Equivalent reactance reffered to HV is {x_equivalent_HV}Ω.')
 
 def getvalues():
     a = []
