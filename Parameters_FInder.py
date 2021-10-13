@@ -41,7 +41,7 @@ def getvalues():
     poc = float(power_value_OC.get())
     sc_data = [vsc,isc,psc]
     oc_data = [voc,ioc,poc]
-    return sc_data, oc_data 
+    return oc_data, sc_data
 
 
 root = Tk()
