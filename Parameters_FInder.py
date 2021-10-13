@@ -33,8 +33,6 @@ def getanswer():
         print(f'Equivalent reactance reffered to HV is {x_equivalent_HV}Ω.')
 
 def getvalues():
-    a = []
-    b = []
     vsc = float(voltage_value_SC.get())
     voc = float(voltage_value_OC.get())
     isc = float(current_value_SC.get())
@@ -43,11 +41,7 @@ def getvalues():
     poc = float(power_value_OC.get())
     sc_data = [vsc,isc,psc]
     oc_data = [voc,ioc,poc]
-    for i in oc_data:
-        a.append(i)
-    for j in sc_data:
-        b.append(j)
-    return a, b
+    return sc_data, oc_data 
 
 
 root = Tk()
