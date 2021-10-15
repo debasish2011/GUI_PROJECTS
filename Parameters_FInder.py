@@ -12,9 +12,9 @@ def getanswer():
     i_magnetizing_LV = OC_Test_Results[1]*sin_theta0
     i_coreloss_LV = OC_Test_Results[1]*cos_theta0
 
-    r_coreloss_LV = OC_Test_Results[0]/i_magnetizing_LV
+    r_coreloss_LV = OC_Test_Results[0]/i_coreloss_LV
     r_coreloss_LV = round(r_coreloss_LV,2)
-    x_magnetizing_LV = OC_Test_Results[0]/i_coreloss_LV
+    x_magnetizing_LV = OC_Test_Results[0]/i_magnetizing_LV
     x_magnetizing_LV = round(x_magnetizing_LV,2)
 
     r_equivalent_HV = SC_Test_Results[2]/SC_Test_Results[1]**2
